@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCMT — Outdoors Club Mountaineering Team</title>
+  <meta name="description" content="Comunidad internacional de montañismo nacida en IE University. Educación certificada, expediciones reales en España y México, historias que importan.">
+
+  <!-- Open Graph (para cuando compartas el link en WhatsApp / Instagram) -->
+  <meta property="og:title" content="OCMT — Outdoors Club Mountaineering Team">
+  <meta property="og:description" content="La montaña no se conquista. Se respeta. Únete a la comunidad.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">OCMT</a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="#expediciones" class="nav__link">Expediciones</a>
+        <a href="#comunidad" class="nav__link">Comunidad</a>
+        <a href="#nosotros" class="nav__link">Nosotros</a>
+        <a href="#contacto" class="nav__link nav__cta">Únete</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO — un solo encabezado, una sola foto ============ -->
+    <section class="hero">
+      <!--
+        REEMPLAZA ESTA IMAGEN:
+        Sube tu foto de expedición a assets/hero.jpg (ideal: 2400x1600px, horizontal, buena luz)
+        y esta imagen la tomará automáticamente. Mientras tanto se ve un placeholder
+        con textura topográfica para que el layout ya se sienta terminado.
+      -->
+      <img src="assets/hero.jpg" alt="Miembros de OCMT en la cresta de una montaña durante un amanecer" class="hero__photo" onerror="this.style.display='none'">
+
+      <svg class="hero__topo" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,650 C200,600 300,700 500,640 C700,580 800,660 1000,600 C1100,570 1150,610 1200,590" />
+        <path d="M0,700 C220,660 320,740 520,690 C720,640 820,710 1020,660 C1120,635 1160,665 1200,650" />
+        <path d="M0,750 C240,720 340,780 540,740 C740,700 840,760 1040,720 C1140,700 1170,720 1200,710" />
+      </svg>
+
+      <div class="hero__scrim"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow">OCMT — España · México</p>
+        <h1 class="hero__title">La montaña no se<br>conquista. Se respeta.</h1>
+        <p class="hero__subtitle">Comunidad internacional de montañismo nacida en el IE Outdoors Club. Educación certificada, expediciones reales, historias que importan.</p>
+        <div class="hero__actions">
+          <a href="#expediciones" class="btn btn--primary">Ver expediciones de verano</a>
+          <a href="#contacto" class="btn btn--ghost">Únete a la comunidad</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PILARES ============ -->
+    <section class="pillars" id="nosotros">
+      <div class="container">
+        <p class="eyebrow eyebrow--dark">Qué es OCMT</p>
+        <h2 class="section-title">Tres cosas que hacemos, en serio</h2>
+
+        <div class="pillars__grid">
+          <article class="pillar">
+            <span class="pillar__index">01</span>
+            <h3 class="pillar__title">Educación</h3>
+            <p class="pillar__text">Formación certificada en alpinismo, montañismo y barranquismo junto a EMAM, escuela reconocida por la Federación Madrileña de Montañismo.</p>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar__index">02</span>
+            <h3 class="pillar__title">Comunidad</h3>
+            <p class="pillar__text">Nacida en el IE Outdoors Club, con más de 1.800 miembros unidos por la montaña. Fraternidad antes que competencia.</p>
+          </article>
+
+          <article class="pillar">
+            <span class="pillar__index">03</span>
+            <h3 class="pillar__title">Historias</h3>
+            <p class="pillar__text">Cada expedición se documenta en foto y video. Micro-documentales que muestran el lado humano de cada cumbre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPEDICIONES ============ -->
+    <section class="expeditions" id="expediciones">
+      <div class="container">
+        <p class="eyebrow">Próximamente</p>
+        <h2 class="section-title section-title--light">Serie Verano — Cuatro cumbres</h2>
+        <p class="expeditions__intro">Un mes, cuatro ascensos, una sola bandera. Agosto en México, guiado por EMAM.</p>
+
+        <ol class="peaks">
+          <li class="peak">
+            <span class="peak__name">La Malinche</span>
+            <span class="peak__elevation">4,461 M</span>
+          </li>
+          <li class="peak">
+            <span class="peak__name">Nevado de Toluca</span>
+            <span class="peak__elevation">4,680 M</span>
+          </li>
+          <li class="peak">
+            <span class="peak__name">Iztaccíhuatl</span>
+            <span class="peak__elevation">5,230 M</span>
+          </li>
+          <li class="peak">
+            <span class="peak__name">Pico de Orizaba</span>
+            <span class="peak__elevation">5,636 M</span>
+          </li>
+        </ol>
+
+        <a href="#contacto" class="btn btn--primary">Reserva tu lugar</a>
+      </div>
+    </section>
+
+    <!-- ============ COMUNIDAD / CONTACTO ============ -->
+    <section class="join" id="comunidad">
+      <div class="container join__inner">
+        <div>
+          <p class="eyebrow eyebrow--dark">Únete</p>
+          <h2 class="section-title">Esto es más grande que una cumbre</h2>
+          <p class="join__text">Si ya practicas montañismo o quieres empezar, hay un lugar para ti en OCMT — en España, en México, o donde sea la próxima expedición.</p>
+        </div>
+        <div class="join__actions" id="contacto">
+          <a href="#" class="btn btn--primary btn--block">Inscríbete a una expedición</a>
+          <a href="#" class="btn btn--outline btn--block">Escríbenos por WhatsApp</a>
+          <a href="#" class="btn btn--outline btn--block">Síguenos en Instagram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="nav__logo footer__logo">OCMT</p>
+        <p class="footer__tagline">Comunidad, sostenibilidad y respeto por la montaña.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Explorar</h4>
+        <a href="#expediciones">Expediciones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#comunidad">Comunidad</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Síguenos</h4>
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Contacto</h4>
+        <a href="#">hola@ocmt.com</a>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© 2026 OCMT — Outdoors Club Mountaineering Team.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
