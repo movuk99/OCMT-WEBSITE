@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — OCMT</title>
+  <meta name="description" content="Get in touch with OCMT — Outdoors Club Mountaineering Team. WhatsApp, Instagram and email.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">OCMT</a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="about.html" class="nav__link">About</a>
+        <a href="expeditions.html" class="nav__link">Expeditions</a>
+        <a href="contact.html" class="nav__link is-active">Contact</a>
+        <a href="contact.html" class="nav__link nav__cta">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-header">
+      <svg class="page-header__topo" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,400 C200,360 300,430 500,390 C700,350 800,410 1000,370 C1100,350 1150,380 1200,365" />
+        <path d="M0,440 C220,410 320,460 520,430 C720,400 820,450 1020,420 C1120,405 1160,425 1200,415" />
+      </svg>
+      <div class="container page-header__content">
+        <p class="eyebrow">Get in touch</p>
+        <h1 class="page-header__title">Let's talk mountains.</h1>
+        <p class="page-header__subtitle">Questions about the Summer Series, joining the community, or just want to know if you're fit enough — reach out directly.</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT CARDS ============ -->
+    <section class="container" style="padding-block: var(--space-6);">
+      <p class="eyebrow eyebrow--dark">Reach us</p>
+      <h2 class="section-title">Pick whatever's easiest</h2>
+
+      <div class="contact-grid">
+        <!--
+          EDIT ME: replace the numbers/handles below with your real ones.
+          WhatsApp click-to-chat format: https://wa.me/<countrycode><number>
+          e.g. https://wa.me/34600123456 (no spaces, no +, no leading 0)
+        -->
+        <a href="https://wa.me/34000000000" class="contact-card">
+          <p class="contact-card__label">WhatsApp</p>
+          <p class="contact-card__value">Message us</p>
+        </a>
+
+        <a href="https://instagram.com/ocmt" class="contact-card">
+          <p class="contact-card__label">Instagram</p>
+          <p class="contact-card__value">@ocmt</p>
+        </a>
+
+        <a href="mailto:hello@ocmt.com" class="contact-card">
+          <p class="contact-card__label">Email</p>
+          <p class="contact-card__value">hello@ocmt.com</p>
+        </a>
+      </div>
+
+      <p class="contact-note">Prefer a form? For the Summer Series specifically, registration runs through a separate sign-up form — link it here once it's ready, or point people to WhatsApp in the meantime.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="nav__logo footer__logo">OCMT</p>
+        <p class="footer__tagline">Community, sustainability and respect for the mountain.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Explore</h4>
+        <a href="about.html">About</a>
+        <a href="expeditions.html">Expeditions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Follow</h4>
+        <a href="https://instagram.com/ocmt">Instagram</a>
+        <a href="https://wa.me/34000000000">WhatsApp</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Contact</h4>
+        <a href="mailto:hello@ocmt.com">hello@ocmt.com</a>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© 2026 OCMT — Outdoors Club Mountaineering Team.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

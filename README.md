@@ -1,42 +1,35 @@
-# OCMT — Sitio web (Home)
+# OCMT — Website (4 pages)
 
-Primera pieza del sitio de marca completo: la homepage. Código real,
-sin dependencias, listo para publicar gratis.
+- `index.html` — Home
+- `about.html` — About
+- `expeditions.html` — Expeditions
+- `contact.html` — Contact
+- `styles.css` — shared design system, variables documented at the top
+- `script.js` — mobile menu, shared by all 4 pages
+- `assets/hero.jpg` — your real expedition photo
 
-## Archivos
-- `index.html` — estructura y contenido
-- `styles.css` — todo el diseño, con variables comentadas arriba del archivo
-- `script.js` — solo el menú móvil, nada más
-- `assets/hero.jpg` — **pon tu foto aquí** (ver `assets/LEEME.txt`)
+## View it locally
+Double-click `index.html` — no install needed.
 
-## Ver el sitio en tu computadora
-No necesitas instalar nada: haz doble clic en `index.html` y se abre en tu navegador.
+## Update your live GitHub site
+You already have the repo connected to GitHub Pages. To push these
+updated files:
 
-## Cambiar colores o tipografía
-Abre `styles.css`, ve a las primeras ~30 líneas (`:root { ... }`).
-Cada variable tiene un comentario explicando qué controla. Cambia el valor
-hexadecimal y guarda — todo el sitio se actualiza solo.
+1. Go to your repo → **Add file → Upload files**
+2. Drag in all 6 items (`index.html`, `about.html`, `expeditions.html`,
+   `contact.html`, `styles.css`, `script.js`) **plus** the `assets` folder
+   — drop them straight into the repo root, not inside a subfolder
+3. Commit changes
+4. Wait ~1 minute, then refresh your live URL
 
-## Cambiar textos
-Todo el texto visible está directo en `index.html`, en español, sin sistemas
-raros de plantillas. Busca la palabra que quieras cambiar y edítala ahí mismo.
+## Change colors or type
+Open `styles.css`, first ~40 lines (`:root { ... }`). Every variable
+has a comment explaining what it controls.
 
-## Publicarlo gratis con dominio propio
+## Change text
+All copy lives directly in each `.html` file, in plain English —
+find the sentence, edit it, save.
 
-1. Compra un dominio (ej. `ocmt.com` o `ocmt.mx`) en Namecheap o Google Domains — ronda $10-15/año.
-2. Crea una cuenta gratis en [Cloudflare Pages](https://pages.cloudflare.com) o [GitHub Pages](https://pages.github.com).
-3. Sube esta carpeta (los 4 archivos + `assets/`) al proyecto.
-4. Conecta tu dominio desde el panel de la plataforma — ambas lo permiten gratis, sin tarjeta de crédito.
-
-Cuando quieras que te ayude con este paso puntual (conectar el dominio,
-subir los archivos), dímelo y lo hacemos juntos en el chat.
-
-## Próximos pasos del sitio completo
-Esta es la Home. Cuando la apruebes, seguimos con:
-- Nosotros / Historia
-- Programa de Embajadores
-- Expediciones (página completa, no solo la sección teaser)
-- Contacto
-
-Todas compartirán las mismas variables de `styles.css`, así que se verán
-consistentes sin rehacer el diseño desde cero.
+## Still to fill in (search each file for "EDIT ME")
+- `contact.html`: real WhatsApp number and Instagram handle
+- Registration form link for the Summer Series, once you have one

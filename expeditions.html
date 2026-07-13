@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expeditions — OCMT</title>
+  <meta name="description" content="OCMT's Summer Series: four objectives across Mexico's volcanic peaks, guided by EMAM. La Malinche, Refugio Otis McAllister, Iztaccíhuatl, Pico de Orizaba.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">OCMT</a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="about.html" class="nav__link">About</a>
+        <a href="expeditions.html" class="nav__link is-active">Expeditions</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="contact.html" class="nav__link nav__cta">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-header">
+      <svg class="page-header__topo" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,400 C200,360 300,430 500,390 C700,350 800,410 1000,370 C1100,350 1150,380 1200,365" />
+        <path d="M0,440 C220,410 320,460 520,430 C720,400 820,450 1020,420 C1120,405 1160,425 1200,415" />
+      </svg>
+      <div class="container page-header__content">
+        <p class="eyebrow">Summer Series — Mexico, August</p>
+        <h1 class="page-header__title">Four objectives.<br>One progression.</h1>
+        <p class="page-header__subtitle">Guided by EMAM, the series is built as a real acclimatization ladder — each stop prepares the body and the group for the next, ending on the highest point in Mexico.</p>
+      </div>
+    </section>
+
+    <!-- ============ ITINERARY ============ -->
+    <section class="container" style="padding-block: var(--space-6);">
+      <p class="eyebrow eyebrow--dark">The itinerary</p>
+      <h2 class="section-title">In order, for a reason</h2>
+
+      <div class="exp-cards">
+        <article class="exp-card">
+          <span class="exp-card__step">01</span>
+          <h3 class="exp-card__name">La Malinche<span class="exp-card__tag">Summit</span></h3>
+          <span class="exp-card__elevation">4,461 M</span>
+          <p class="exp-card__text">The warm-up. A non-technical ascent used to test gear, pace the group, and get everyone's legs under them before the altitude gets serious.</p>
+        </article>
+
+        <article class="exp-card">
+          <span class="exp-card__step">02</span>
+          <h3 class="exp-card__name">Refugio Otis McAllister<span class="exp-card__tag">Acclimatization camp</span></h3>
+          <span class="exp-card__elevation">4,694 M</span>
+          <p class="exp-card__text">A night at altitude on the shoulder of Iztaccíhuatl, at the base of the retreating Ayoloco glacier. This is where bodies adjust before the technical climbs begin.</p>
+        </article>
+
+        <article class="exp-card">
+          <span class="exp-card__step">03</span>
+          <h3 class="exp-card__name">Iztaccíhuatl<span class="exp-card__tag">Summit</span></h3>
+          <span class="exp-card__elevation">5,230 M</span>
+          <p class="exp-card__text">Known as "La Mujer Dormida." The route to the summit — "El Pecho" — crosses terrain shaped by a glacier that, at this rate, won't outlast the decade.</p>
+        </article>
+
+        <article class="exp-card">
+          <span class="exp-card__step">04</span>
+          <h3 class="exp-card__name">Pico de Orizaba<span class="exp-card__tag">Summit — final objective</span></h3>
+          <span class="exp-card__elevation">5,636 M</span>
+          <p class="exp-card__text">Citlaltépetl to the Aztecs. The highest peak in Mexico and the third-highest in North America — and the reason the first three stops exist.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ JOIN CTA ============ -->
+    <section class="join">
+      <div class="container join__inner">
+        <div>
+          <p class="eyebrow eyebrow--dark">Reserve your spot</p>
+          <h2 class="section-title">Spots are limited by design</h2>
+          <p class="join__text">Small groups mean safer decisions at altitude. Reach out for dates, requirements and gear lists.</p>
+        </div>
+        <div class="join__actions">
+          <a href="contact.html" class="btn btn--primary btn--block">Sign up for the series</a>
+          <a href="contact.html" class="btn btn--outline btn--block">Ask a question first</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="nav__logo footer__logo">OCMT</p>
+        <p class="footer__tagline">Community, sustainability and respect for the mountain.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Explore</h4>
+        <a href="about.html">About</a>
+        <a href="expeditions.html">Expeditions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Follow</h4>
+        <a href="contact.html">Instagram</a>
+        <a href="contact.html">WhatsApp</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Contact</h4>
+        <a href="contact.html">hello@ocmt.com</a>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© 2026 OCMT — Outdoors Club Mountaineering Team.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
