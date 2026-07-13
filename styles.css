@@ -16,7 +16,8 @@
   --color-ink: #15140f;
   --color-ink-soft: #211f19;
   --color-paper: #f4f0e6;
-  --color-accent: #c77c3f;
+  --color-accent: #005187;
+  --color-accent-on-dark: #4fa3d1; /* lighter tint of --color-accent, used only for text over the dark ink background — #005187 itself is too dark to read there */
   --color-moss: #7c8a76;
   --color-line: rgba(244, 240, 230, 0.14);
   --color-line-dark: rgba(21, 20, 15, 0.12);
@@ -118,8 +119,20 @@ a:focus-visible, button:focus-visible {
   border: 1px solid transparent;
   transition: transform var(--transition), background var(--transition), border-color var(--transition);
 }
-.btn--primary { background: var(--color-accent); color: var(--color-ink); }
+.btn--primary { background: var(--color-accent); color: var(--color-paper); }
 .btn--primary:hover { transform: translateY(-2px); }
+
+/* Glass — translucent white, used only on dark/photo backgrounds
+   (hero, dark expedition section) where solid orange would compete
+   with the image. Keeps the accent color reserved for light sections. */
+.btn--glass {
+  background: rgba(244, 240, 230, 0.14);
+  color: var(--color-paper);
+  border-color: rgba(244, 240, 230, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.btn--glass:hover { background: rgba(244, 240, 230, 0.22); transform: translateY(-2px); }
 
 .btn--ghost { border-color: rgba(244, 240, 230, 0.4); color: var(--color-paper); }
 .btn--ghost:hover { border-color: var(--color-paper); }
@@ -201,12 +214,12 @@ a:focus-visible, button:focus-visible {
 }
 .nav__link:hover,
 .nav__link.is-active { opacity: 1; }
-.nav__link.is-active { color: var(--color-accent); }
+.nav__link.is-active { color: var(--color-accent-on-dark); }
 .nav__cta {
   font-family: var(--font-body);
   font-size: 1rem;
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-paper);
   padding: 0.7em 1.4em;
   border-radius: var(--radius);
   opacity: 1 !important;
@@ -461,7 +474,7 @@ a:focus-visible, button:focus-visible {
 }
 .peak__elevation {
   font-family: var(--font-mono);
-  color: var(--color-accent);
+  color: var(--color-accent-on-dark);
   font-size: 0.9rem;
 }
 
