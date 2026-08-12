@@ -29,6 +29,23 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMenu();
 });
 
+// Nav backdrop — transparent while floating over the hero/page-header
+// (both dark), solid+blurred once scrolled into the content below, so the
+// fixed nav never lets scrolling sections show/blend through it.
+const navEl = document.querySelector('.nav');
+const introSection = document.querySelector('.hero, .page-header');
+if (navEl && introSection && 'IntersectionObserver' in window) {
+  const navObserver = new IntersectionObserver(
+    ([entry]) => {
+      navEl.classList.toggle('is-scrolled', entry.intersectionRatio < 0.6);
+    },
+    { threshold: [0, 0.6, 1] }
+  );
+  navObserver.observe(introSection);
+} else if (navEl) {
+  navEl.classList.add('is-scrolled');
+}
+
 // Scroll reveal — fade + rise once per element as it enters the viewport.
 // Elements opt in with [data-reveal]; stagger within a shared grid/list is
 // handled purely in CSS via nth-child delays, so this stays simple.
