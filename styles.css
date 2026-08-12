@@ -263,7 +263,9 @@ a:focus-visible, button:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  /* Shifted right/up from center so the climbers sit clear of the text
+     column below (was center 30% — put the group under the headline). */
+  object-position: 68% 24%;
   opacity: 0;
   transition: opacity 1.4s ease;
 }
@@ -299,34 +301,30 @@ a:focus-visible, button:focus-visible {
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(21,20,15,0.94) 8%, rgba(21,20,15,0.25) 55%, rgba(21,20,15,0.35) 100%);
+  background:
+    linear-gradient(100deg, rgba(21,20,15,0.55) 0%, rgba(21,20,15,0.18) 40%, rgba(21,20,15,0) 58%),
+    linear-gradient(0deg, rgba(21,20,15,0.94) 8%, rgba(21,20,15,0.25) 55%, rgba(21,20,15,0.35) 100%);
 }
 
-/* Signature mark — large, centered brand stamp over the photo, sitting in
-   the open sky/ridge area above the bottom-anchored headline block. Stands
-   in for the "partner logo strip" idea from the reference comp, but as
-   OCMT's own mark rather than third-party logos. */
+/* Signature mark — sits in normal flow at the top of hero__content, using
+   the solid logo (mountain + wordmark, no thin lines) so it reads clearly
+   against the photo. In-flow instead of absolute: its position rides along
+   with the bottom-anchored text block instead of a fixed % that breaks at
+   different viewport heights. */
 .hero__signature {
-  position: absolute;
-  top: 34%;
-  left: 50%;
-  z-index: 2;
-  width: clamp(200px, 30vw, 420px);
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.45));
-  pointer-events: none;
+  display: block;
+  width: clamp(150px, 15vw, 240px);
+  margin-bottom: var(--space-2);
 }
 .hero__signature-mark { width: 100%; height: auto; display: block; }
-@media (max-width: 600px) {
-  .hero__signature { top: 27%; width: clamp(160px, 46vw, 260px); }
-}
 
 .hero__content {
   position: relative;
   z-index: 2;
   padding: var(--space-5) var(--space-2) var(--space-5);
-  max-width: 760px;
+  max-width: 720px;
 }
+.hero .eyebrow { color: rgba(244, 240, 230, 0.8); }
 @media (min-width: 768px) {
   .hero__content { padding: var(--space-6) var(--space-4); }
 }
@@ -351,6 +349,12 @@ a:focus-visible, button:focus-visible {
   gap: var(--space-2);
   margin-top: var(--space-3);
 }
+@media (max-width: 600px) {
+  /* Portrait crops of hero-bw.jpg lose the horizontal breathing room the
+     desktop position relies on — shift further left/up to keep a clean
+     dark zone behind the text instead of landing on bright snow texture. */
+  .hero__slide { object-position: 35% 8%; }
+}
 
 /* Staggered entrance — headline, subtitle, CTAs rise in one after another;
    the signature mark fades in last. Mirrors the reference comp's reveal
@@ -359,10 +363,7 @@ a:focus-visible, button:focus-visible {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes heroFade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+.hero__signature,
 .hero .eyebrow,
 .hero__title,
 .hero__subtitle,
@@ -370,21 +371,17 @@ a:focus-visible, button:focus-visible {
   opacity: 0;
   animation: heroRise 0.9s cubic-bezier(.22, 1, .36, 1) forwards;
 }
-.hero .eyebrow    { animation-delay: 0.05s; }
-.hero__title      { animation-delay: 0.16s; }
-.hero__subtitle   { animation-delay: 0.30s; }
-.hero__actions    { animation-delay: 0.42s; }
-.hero__signature {
-  opacity: 0;
-  animation: heroFade 1.3s ease forwards;
-  animation-delay: 0.55s;
-}
+.hero__signature  { animation-delay: 0.02s; }
+.hero .eyebrow    { animation-delay: 0.14s; }
+.hero__title      { animation-delay: 0.24s; }
+.hero__subtitle   { animation-delay: 0.36s; }
+.hero__actions    { animation-delay: 0.48s; }
 @media (prefers-reduced-motion: reduce) {
+  .hero__signature,
   .hero .eyebrow,
   .hero__title,
   .hero__subtitle,
-  .hero__actions,
-  .hero__signature {
+  .hero__actions {
     opacity: 1;
     animation: none;
     transform: none;
@@ -446,6 +443,21 @@ a:focus-visible, button:focus-visible {
 .pillar {
   border-top: 1px solid var(--color-line-dark);
   padding-top: var(--space-2);
+}
+.pillar__icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: var(--space-2);
+  color: var(--color-accent);
+}
+.pillar__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .pillar__index {
   font-family: var(--font-mono);
@@ -549,6 +561,63 @@ a:focus-visible, button:focus-visible {
   font-size: 0.9rem;
 }
 
+/* ==========================================================================
+   Band — full-bleed photo storytelling section, used between existing
+   sections for a single punchy line (à la Arc'teryx's alternating bands).
+   One idea per band, short text, no competing content.
+   ========================================================================== */
+.band {
+  position: relative;
+  min-height: 56vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.band__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.band__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08) translateY(0);
+  will-change: transform;
+}
+.band__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(21, 20, 15, 0.52);
+}
+.band__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-inline: var(--space-3);
+  max-width: 44ch;
+}
+.band__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 230, 0.75);
+}
+.band__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-paper);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  margin-top: var(--space-1);
+}
+
 /* Full expedition cards — Expeditions page */
 .exp-cards {
   margin-top: var(--space-5);
@@ -620,6 +689,38 @@ a:focus-visible, button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+}
+.join__actions--social {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.join__social {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.join__social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-line-dark);
+  color: var(--color-ink);
+  transition: background var(--transition), color var(--transition);
+}
+.join__social:hover .join__social-icon,
+.join__social:focus-visible .join__social-icon {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+.join__social-icon svg { width: 20px; height: 20px; }
+.join__social-label {
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 /* ==========================================================================
@@ -701,4 +802,44 @@ a:focus-visible, button:focus-visible {
   font-size: 0.75rem;
   color: rgba(244, 240, 230, 0.45);
   padding-block: var(--space-3);
+}
+
+/* ==========================================================================
+   Scroll reveal — IntersectionObserver (see script.js) toggles .is-revealed.
+   Editorial, not gimmicky: fade + small rise, once per element, staggered
+   within a shared grid/list via nth-child delay. Parallax is opt-in via
+   [data-parallax] and only ever applied to band photography.
+   ========================================================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(.22, 1, .36, 1), transform 0.8s cubic-bezier(.22, 1, .36, 1);
+}
+[data-reveal].is-revealed { opacity: 1; transform: none; }
+
+.pillars__grid > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+.pillars__grid > [data-reveal]:nth-child(2) { transition-delay: .12s; }
+.pillars__grid > [data-reveal]:nth-child(3) { transition-delay: .24s; }
+
+.peaks > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+.peaks > [data-reveal]:nth-child(2) { transition-delay: .08s; }
+.peaks > [data-reveal]:nth-child(3) { transition-delay: .16s; }
+.peaks > [data-reveal]:nth-child(4) { transition-delay: .24s; }
+
+.exp-cards > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+.exp-cards > [data-reveal]:nth-child(2) { transition-delay: .1s; }
+.exp-cards > [data-reveal]:nth-child(3) { transition-delay: .2s; }
+.exp-cards > [data-reveal]:nth-child(4) { transition-delay: .3s; }
+
+.stats > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+.stats > [data-reveal]:nth-child(2) { transition-delay: .1s; }
+.stats > [data-reveal]:nth-child(3) { transition-delay: .2s; }
+
+.contact-grid > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+.contact-grid > [data-reveal]:nth-child(2) { transition-delay: .1s; }
+.contact-grid > [data-reveal]:nth-child(3) { transition-delay: .2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .band__media img { transform: none !important; }
 }

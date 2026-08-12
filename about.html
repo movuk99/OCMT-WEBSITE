@@ -16,7 +16,7 @@
 
   <header class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo"><img src="assets/logo-light.png" alt="OCMT" class="logo-mark"></a>
+      <a href="index.html" class="nav__logo"><img src="assets/wordmark-solid-white.png" alt="OCMT" class="logo-mark"></a>
 
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
         <span class="nav__toggle-bar"></span>
@@ -55,8 +55,20 @@
         <h2 class="section-title">Born at the IE Outdoors Club</h2>
       </div>
       <div>
-        <p class="story__text">OCMT — Outdoors Club Mountaineering Team — grew out of the IE Outdoors Club, a community of more than 1,800 members at IE University. What began as informal weekend trips into the Sierra de Guadarrama turned into a structured mountaineering program with real certification behind it.</p>
-        <p class="story__text">Today OCMT runs across two countries: Spain, where most of the community is based and trained, and Mexico, where the club's summer expedition series takes members to some of the highest volcanic peaks in North America.</p>
+        <p class="story__text" data-reveal>OCMT — Outdoors Club Mountaineering Team — grew out of the IE Outdoors Club, a community of more than 1,800 members at IE University. What began as informal weekend trips into the Sierra de Guadarrama turned into a structured mountaineering program with real certification behind it.</p>
+        <p class="story__text" data-reveal>Today OCMT runs across two countries: Spain, where most of the community is based and trained, and Mexico, where the club's summer expedition series takes members to some of the highest volcanic peaks in North America.</p>
+      </div>
+    </section>
+
+    <!-- ============ BAND ============ -->
+    <section class="band">
+      <div class="band__media" data-parallax>
+        <img src="assets/hero-05.jpg" alt="Sea of clouds seen from a volcanic ridge above Mexico City">
+      </div>
+      <div class="band__scrim"></div>
+      <div class="band__content" data-reveal>
+        <p class="band__eyebrow">Two countries, one community</p>
+        <h2 class="band__title">Trained in Spain.<br>Tested in Mexico.</h2>
       </div>
     </section>
 
@@ -67,19 +79,22 @@
         <h2 class="section-title">The three commitments behind every trip</h2>
 
         <div class="pillars__grid">
-          <article class="pillar">
+          <article class="pillar" data-reveal>
+            <span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20 9 8l4 7 2-3 6 8Z"/><path d="M9 8 11 4l3 5"/></svg></span>
             <span class="pillar__index">01</span>
             <h3 class="pillar__title">Education</h3>
             <p class="pillar__text">Every technical trip is led under EMAM, a mountaineering school recognized by the Federación Madrileña de Montañismo. No one summits without the training to get there safely.</p>
           </article>
 
-          <article class="pillar">
+          <article class="pillar" data-reveal>
+            <span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v4M5.6 5.6l2.8 2.8M3 12h4M5.6 18.4l2.8-2.8M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg></span>
             <span class="pillar__index">02</span>
             <h3 class="pillar__title">Sustainability</h3>
             <p class="pillar__text">Small group sizes, leave-no-trace practice, and routes chosen with respect for the mountain — not just for the summit photo.</p>
           </article>
 
-          <article class="pillar">
+          <article class="pillar" data-reveal>
+            <span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6Z"/></svg></span>
             <span class="pillar__index">03</span>
             <h3 class="pillar__title">Respect</h3>
             <p class="pillar__text">The mountain sets the terms. Weather, altitude and the group's readiness decide the itinerary — the summit is a possibility, never a promise.</p>
@@ -87,15 +102,15 @@
         </div>
 
         <div class="stats">
-          <div>
+          <div data-reveal>
             <p class="stat__value">1,800+</p>
             <p class="stat__label">IE Outdoors Club members</p>
           </div>
-          <div>
+          <div data-reveal>
             <p class="stat__value">2</p>
             <p class="stat__label">Countries — Spain &amp; Mexico</p>
           </div>
-          <div>
+          <div data-reveal>
             <p class="stat__value">EMAM</p>
             <p class="stat__label">Certified technical partner</p>
           </div>
@@ -106,12 +121,12 @@
     <!-- ============ JOIN CTA ============ -->
     <section class="join">
       <div class="container join__inner">
-        <div>
+        <div data-reveal>
           <p class="eyebrow eyebrow--dark">Next step</p>
           <h2 class="section-title">See what's next on the calendar</h2>
           <p class="join__text">The Summer Series is the next chance to climb with OCMT — four objectives across one month in Mexico.</p>
         </div>
-        <div class="join__actions">
+        <div class="join__actions" data-reveal>
           <a href="expeditions.html" class="btn btn--primary btn--block">View expeditions</a>
           <a href="contact.html" class="btn btn--outline btn--block">Get in touch</a>
         </div>
@@ -123,7 +138,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="assets/logo-light.png" alt="OCMT" class="logo-mark footer__logo">
+        <img src="assets/wordmark-solid-white.png" alt="OCMT" class="logo-mark footer__logo">
         <p class="footer__tagline">Community, sustainability and respect for the mountain.</p>
       </div>
 

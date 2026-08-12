@@ -29,6 +29,60 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMenu();
 });
 
+// Scroll reveal — fade + rise once per element as it enters the viewport.
+// Elements opt in with [data-reveal]; stagger within a shared grid/list is
+// handled purely in CSS via nth-child delays, so this stays simple.
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll('[data-reveal]');
+if (revealEls.length) {
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('is-revealed'));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+  }
+}
+
+// Light parallax on band photography only — [data-parallax] opts in.
+// Throttled with rAF, skipped entirely for reduced motion.
+const parallaxEls = document.querySelectorAll('[data-parallax]');
+if (parallaxEls.length && !reduceMotion) {
+  let parallaxTicking = false;
+  function updateParallax() {
+    const vh = window.innerHeight;
+    parallaxEls.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < vh) {
+        const progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+        const offset = progress * -36;
+        el.style.transform = `translateY(${offset}px) scale(1.08)`;
+      }
+    });
+    parallaxTicking = false;
+  }
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!parallaxTicking) {
+        requestAnimationFrame(updateParallax);
+        parallaxTicking = true;
+      }
+    },
+    { passive: true }
+  );
+  updateParallax();
+}
+
 // Hero slideshow — crossfades every 5s. Skips auto-advance entirely for
 // people who prefer reduced motion (they just see the first photo).
 const slideshow = document.getElementById('heroSlideshow');

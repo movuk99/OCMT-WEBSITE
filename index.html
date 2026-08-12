@@ -20,7 +20,7 @@
 <!-- ============ NAV (shared markup — copy into every page, update .is-active) ============ -->
 <header class="nav">
 <div class="nav__inner">
-<a href="index.html" class="nav__logo"><img src="assets/logo-light.png" alt="OCMT" class="logo-mark"></a>
+<a href="index.html" class="nav__logo"><img src="assets/wordmark-solid-white.png" alt="OCMT" class="logo-mark"></a>
 
 <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
 <span class="nav__toggle-bar"></span>
@@ -53,11 +53,10 @@
 
 <div class="hero__scrim"></div>
 
-<div class="hero__signature" aria-hidden="true">
-<img src="assets/logo-light.png" alt="" class="hero__signature-mark">
-</div>
-
 <div class="hero__content">
+<div class="hero__signature" aria-hidden="true">
+<img src="assets/logo-solid-white.png" alt="" class="hero__signature-mark">
+</div>
 <p class="eyebrow">OCMT — International Mountaineering Community</p>
 <h1 class="hero__title">Outdoors Club<br>Mountaineering Team.</h1>
 <p class="hero__subtitle">OCMT is an international, youth-oriented mountaineering community based in Spain but represented worldwide. Our goal is to be pioneers in creating the next generation of outdoor enthusiasts through education, community, and respect for nature.</p>
@@ -75,19 +74,22 @@
 <h2 class="section-title">Our Pillars</h2>
 
 <div class="pillars__grid">
-<article class="pillar">
+<article class="pillar" data-reveal>
+<span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20 9 8l4 7 2-3 6 8Z"/><path d="M9 8 11 4l3 5"/></svg></span>
 <span class="pillar__index">01</span>
 <h3 class="pillar__title">Education / Sustainability</h3>
 <p class="pillar__text">Certified alpinism, mountaineering and canyoning training with EMAM, paired with low-impact, leave-no-trace practices on every route we run.</p>
 </article>
 
-<article class="pillar">
+<article class="pillar" data-reveal>
+<span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="7" r="2.6"/><circle cx="16" cy="7" r="2.6"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M10 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></span>
 <span class="pillar__index">02</span>
 <h3 class="pillar__title">Community</h3>
 <p class="pillar__text">Born at the IE Outdoors Club, now 1,800+ members strong and bound by the mountains. Fellowship over competition, wherever the trail leads.</p>
 </article>
 
-<article class="pillar">
+<article class="pillar" data-reveal>
+<span class="pillar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6 9.5 3h5L16 6"/></svg></span>
 <span class="pillar__index">03</span>
 <h3 class="pillar__title">Creative House</h3>
 <p class="pillar__text">Every expedition is captured in photo and film by our in-house creative team, turning summits into micro-documentaries that show the human side of the climb.</p>
@@ -96,21 +98,42 @@
 </div>
 </section>
 
+<!-- ============ MISSION BAND ============ -->
+<section class="band">
+<div class="band__media" data-parallax>
+<img src="assets/hero-09.jpg" alt="Misty ridge at dusk in the Sierra Nevada de Toluca">
+</div>
+<div class="band__scrim"></div>
+<div class="band__content" data-reveal>
+<p class="band__eyebrow">What we stand for</p>
+<h2 class="band__title">Built on community.<br>Guided by respect for the mountain.</h2>
+</div>
+</section>
+
 <!-- ============ EXPEDITIONS TEASER ============ -->
 <section class="expeditions">
 <div class="container">
 <p class="eyebrow">Coming up</p>
+<h2 class="section-title section-title--light">Summer Series — Mexico, August</h2>
+<p class="expeditions__intro">Four peaks, one acclimatization ladder, guided by EMAM.</p>
+<div class="peaks">
+<div class="peak" data-reveal><span class="peak__name">La Malinche</span><span class="peak__elevation">4,461 M</span></div>
+<div class="peak" data-reveal><span class="peak__name">Refugio Otis McAllister</span><span class="peak__elevation">4,694 M</span></div>
+<div class="peak" data-reveal><span class="peak__name">Iztaccíhuatl</span><span class="peak__elevation">5,230 M</span></div>
+<div class="peak" data-reveal><span class="peak__name">Pico de Orizaba</span><span class="peak__elevation">5,636 M</span></div>
+</div>
+<a href="expeditions.html" class="btn btn--glass">View all expeditions</a>
 </div>
 </section>
 
 <!-- ============ JOIN ============ -->
 <section class="join">
 <div class="container join__inner">
-<div>
+<div data-reveal>
 <h2 class="section-title">Don't be left out, aim high.</h2>
 <p class="join__text">Whether you already have experience or want to get started, there's a place for you in OCMT.</p>
 </div>
-<div class="join__actions join__actions--social">
+<div class="join__actions join__actions--social" data-reveal>
 <a href="https://www.instagram.com/outdoorscmt/" target="_blank" rel="noopener" class="join__social">
 <span class="join__social-icon" aria-hidden="true">
 <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.4.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.35 1.05.4 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.4 2.22-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.05.35-2.22.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.4-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.35-1.05-.4-2.22C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.8.4-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.35 2.22-.4C8.42 2.21 8.8 2.2 12 2.2zm0-2.2C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39C1.34 2.68.93 3.35.62 4.14c-.3.76-.5 1.64-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.32 1.34 20.65.93 19.86.62c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
@@ -133,7 +156,7 @@
 <footer class="footer">
 <div class="container footer__inner">
 <div class="footer__brand">
-<img src="assets/logo-light.png" alt="OCMT" class="logo-mark footer__logo">
+<img src="assets/wordmark-solid-white.png" alt="OCMT" class="logo-mark footer__logo">
 <p class="footer__tagline">Community, sustainability and respect for the mountain.</p>
 </div>
 
