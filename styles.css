@@ -302,6 +302,25 @@ a:focus-visible, button:focus-visible {
   background: linear-gradient(0deg, rgba(21,20,15,0.94) 8%, rgba(21,20,15,0.25) 55%, rgba(21,20,15,0.35) 100%);
 }
 
+/* Signature mark — large, centered brand stamp over the photo, sitting in
+   the open sky/ridge area above the bottom-anchored headline block. Stands
+   in for the "partner logo strip" idea from the reference comp, but as
+   OCMT's own mark rather than third-party logos. */
+.hero__signature {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  z-index: 2;
+  width: clamp(200px, 30vw, 420px);
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+.hero__signature-mark { width: 100%; height: auto; display: block; }
+@media (max-width: 600px) {
+  .hero__signature { top: 27%; width: clamp(160px, 46vw, 260px); }
+}
+
 .hero__content {
   position: relative;
   z-index: 2;
@@ -331,6 +350,45 @@ a:focus-visible, button:focus-visible {
   flex-wrap: wrap;
   gap: var(--space-2);
   margin-top: var(--space-3);
+}
+
+/* Staggered entrance — headline, subtitle, CTAs rise in one after another;
+   the signature mark fades in last. Mirrors the reference comp's reveal
+   sequence without needing its fixed-pixel grid system. */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.hero .eyebrow,
+.hero__title,
+.hero__subtitle,
+.hero__actions {
+  opacity: 0;
+  animation: heroRise 0.9s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+.hero .eyebrow    { animation-delay: 0.05s; }
+.hero__title      { animation-delay: 0.16s; }
+.hero__subtitle   { animation-delay: 0.30s; }
+.hero__actions    { animation-delay: 0.42s; }
+.hero__signature {
+  opacity: 0;
+  animation: heroFade 1.3s ease forwards;
+  animation-delay: 0.55s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .eyebrow,
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions,
+  .hero__signature {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
 }
 
 /* ==========================================================================
