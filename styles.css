@@ -123,6 +123,7 @@ a:focus-visible, button:focus-visible {
 }
 .btn--primary { background: var(--color-accent); color: var(--color-paper); }
 .btn--primary:hover { transform: translateY(-2px); }
+.btn--sm { font-size: 0.82rem; padding: 0.65em 1.2em; }
 
 /* Glass — translucent white, used only on dark/photo backgrounds
    (hero, dark expedition section) where solid orange would compete
@@ -272,9 +273,10 @@ a:focus-visible, button:focus-visible {
    ========================================================================== */
 .hero {
   position: relative;
+  min-height: 100vh;
   min-height: 100svh;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   overflow: hidden;
   background: linear-gradient(180deg, #1c1a14 0%, var(--color-ink) 70%);
 }
@@ -348,12 +350,12 @@ a:focus-visible, button:focus-visible {
 .hero__content {
   position: relative;
   z-index: 2;
-  padding: var(--space-5) var(--space-2) var(--space-5);
+  padding: calc(var(--space-6) + var(--space-2)) var(--space-2) var(--space-3);
   max-width: 720px;
 }
 .hero .eyebrow { color: rgba(244, 240, 230, 0.8); }
 @media (min-width: 768px) {
-  .hero__content { padding: var(--space-6) var(--space-4); }
+  .hero__content { padding: calc(var(--space-6) + var(--space-3)) var(--space-4) var(--space-3); }
 }
 .hero__title {
   font-family: var(--font-display);
@@ -383,27 +385,69 @@ a:focus-visible, button:focus-visible {
   .hero__slide { object-position: 35% 8%; }
 }
 
-/* Staggered entrance — eyebrow, headline, subtitle, CTAs rise in one after
-   another on load. */
+/* Scroll-down cue — subtle, centered at the bottom of the hero. */
+.hero__scrolldown {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-3);
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(244, 240, 230, 0.55);
+  opacity: 0;
+  animation: heroRise 0.9s cubic-bezier(.22, 1, .36, 1) forwards, scrollBob 2.2s ease-in-out 1.2s infinite;
+  animation-delay: 0.5s, 1.2s;
+  transition: color var(--transition);
+}
+.hero__scrolldown:hover { color: rgba(244, 240, 230, 0.9); }
+.hero__scrolldown svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@keyframes scrollBob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__scrolldown { opacity: 1; animation: none; transform: translateX(-50%); }
+}
+
+/* Lead paragraph — the description that used to live in the hero, now
+   introducing Pillars instead. */
+.pillars__intro {
+  color: var(--color-ink-soft);
+  font-size: 1.05rem;
+  max-width: 60ch;
+  margin-top: var(--space-2);
+}
+
+/* Staggered entrance — eyebrow, headline, CTAs rise in one after another on
+   load. */
 @keyframes heroRise {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .hero .eyebrow,
 .hero__title,
-.hero__subtitle,
 .hero__actions {
   opacity: 0;
   animation: heroRise 0.9s cubic-bezier(.22, 1, .36, 1) forwards;
 }
 .hero .eyebrow    { animation-delay: 0.05s; }
 .hero__title      { animation-delay: 0.16s; }
-.hero__subtitle   { animation-delay: 0.30s; }
-.hero__actions    { animation-delay: 0.42s; }
+.hero__actions    { animation-delay: 0.30s; }
 @media (prefers-reduced-motion: reduce) {
   .hero .eyebrow,
   .hero__title,
-  .hero__subtitle,
   .hero__actions {
     opacity: 1;
     animation: none;
@@ -505,7 +549,6 @@ a:focus-visible, button:focus-visible {
   transform: scale(1.06) !important;
   position: relative;
   z-index: 5;
-  box-shadow: 0 12px 28px rgba(21,20,15,0.14);
 }
 .pillar__icon {
   display: block;
@@ -696,6 +739,68 @@ a:focus-visible, button:focus-visible {
   line-height: 1.05;
   margin-top: var(--space-1);
 }
+
+/* ==========================================================================
+   Expeditions catalog — grid pattern modeled on mexicovolcanoes.com's
+   trip listing (photo card, title, short text, "Ver viaje" link). Media is
+   solid black for now since there are no per-expedition photos yet; each
+   card is a placeholder that will eventually link to its own detail page.
+   ========================================================================== */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5) var(--space-3);
+  margin-top: var(--space-4);
+}
+@media (min-width: 700px) {
+  .mv-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.mv-card__frame {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 125%; /* 4:5 — classic percentage technique, no aspect-ratio dependency */
+  overflow: hidden;
+  background: var(--color-ink);
+}
+.mv-card__media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--color-ink);
+  transition: transform 0.4s cubic-bezier(.22, 1, .36, 1);
+}
+.mv-card:hover .mv-card__media,
+.mv-card:focus-within .mv-card__media { transform: scale(1.08); }
+.mv-card__title {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+}
+.mv-card__title a { color: var(--color-ink); text-decoration: none; }
+.mv-card__title a:hover { color: var(--color-accent); }
+.mv-card__text {
+  margin-top: var(--space-1);
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+  max-width: 32ch;
+}
+.mv-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: var(--space-2);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+.mv-card__link:hover { text-decoration: underline; }
 
 /* Full expedition cards — Expeditions page */
 .exp-cards {
