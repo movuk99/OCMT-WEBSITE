@@ -821,32 +821,64 @@ a:focus-visible, button:focus-visible {
 .mv-card__link:hover { text-decoration: underline; }
 
 /* ==========================================================================
-   Expedition detail pages — meta row (duration/difficulty), body text, and
-   a placeholder photo gallery (solid black blocks until real photos exist).
+   Expedition detail pages — modeled directly on mexicovolcanoes.com's trip
+   page: repeated title, type label, icon+label+value meta row, divider,
+   description, divider, landscape photo gallery. No price, no contact card
+   (per instruction) — placeholder black media until real photos exist.
    ========================================================================== */
+.exp-detail__body { padding-block: var(--space-5) var(--space-3); }
+.exp-detail__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  line-height: 1.05;
+}
+.exp-detail__type {
+  color: var(--color-ink-soft);
+  font-size: 1rem;
+  margin-top: var(--space-1);
+}
+.exp-detail__divider {
+  border: none;
+  border-top: 1px solid var(--color-line-dark);
+  margin-block: var(--space-3);
+}
 .exp-detail__meta {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-5);
-  padding-block: var(--space-4);
-  border-bottom: 1px solid var(--color-line-dark);
+}
+.exp-detail__meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.exp-detail__meta-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+.exp-detail__meta-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .exp-detail__meta-label {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+  font-size: 1.05rem;
 }
 .exp-detail__meta-value {
   display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.3rem;
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
   margin-top: 0.2em;
 }
-.exp-detail__body { padding-block: var(--space-5); }
 .exp-detail__text {
   color: var(--color-ink-soft);
   font-size: 1.05rem;
@@ -866,7 +898,7 @@ a:focus-visible, button:focus-visible {
   display: block;
   position: relative;
   width: 100%;
-  padding-top: 125%;
+  padding-top: 75%; /* landscape, matches the reference's photo strip */
   background: var(--color-ink);
 }
 
