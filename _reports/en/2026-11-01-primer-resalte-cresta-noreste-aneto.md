@@ -17,15 +17,36 @@ gallery:
   - src: /assets/reports/2026-11-aneto/03.jpg
     alt: "Snow slope with granite blocks below a rocky ridge and blue sky"
     caption: "Hard, easy-going snow towards the foot of the route."
+  - src: /assets/reports/2026-11-aneto/i360-106.jpg
+    alt: "Alpinist's hand on a granite block on the ridge, with an orange rope and the snowy slope behind"
+    caption: "Hands on the granite."
+  - src: /assets/reports/2026-11-aneto/i360-111.jpg
+    alt: "Alpinist in a blue helmet seen from above on a ridge of blocks, with a red rucksack further along, snow on both sides and the sun in the sky"
+    caption: "The ridge from above."
   - src: /assets/reports/2026-11-aneto/05.jpg
     alt: "Alpinist in a yellow jacket and white helmet moving up through granite blocks, with the Pyrenees behind"
     caption: "Moving up the granite."
   - src: /assets/reports/2026-11-aneto/cover.jpg
     alt: "Alpinist at a belay on a granite ridge, with an orange rope and blue sky behind"
     caption: "At a belay on the ridge."
+  - src: /assets/reports/2026-11-aneto/i360-125.jpg
+    alt: "Alpinist with an orange rope and karabiners on the harness, one hand on a large granite block above the snow"
+    caption: "Gear on the harness."
+  - src: /assets/reports/2026-11-aneto/i360-136.jpg
+    alt: "Alpinist in a blue helmet on granite slabs next to a patch of snow, with rock spires and the valley behind"
+    caption: "Granite and patches of snow."
   - src: /assets/reports/2026-11-aneto/07.jpg
     alt: "Wall of rock and snow under a deep blue sky"
     caption: "Rock and snow above us."
+  - src: /assets/reports/2026-11-aneto/i360-196.jpg
+    alt: "Alpinist in a blue helmet and harness standing among the blocks, with a second alpinist crouching on the snow behind and mountains on the horizon"
+    caption: "Both of us on the ridge."
+  - src: /assets/reports/2026-11-aneto/i360-180.jpg
+    alt: "Alpinist in a blue helmet sitting on a granite block with an orange rope in hand, snow below and valleys behind"
+    caption: "Rope in hand, above the snow."
+  - src: /assets/reports/2026-11-aneto/i360-201.jpg
+    alt: "Ridge of blocks and snow with an alpinist among the rocks, an orange rope in the foreground and the Pyrenees on the horizon"
+    caption: "The ridge and the Pyrenean skyline."
   - src: /assets/reports/2026-11-aneto/08.jpg
     alt: "Roped alpinist among the blocks of the ridge, with the rope in the foreground and blue sky"
     caption: "Roped up among the blocks."
