@@ -11,17 +11,35 @@ route: Cresta noreste, vertiente sur
 team: 2 personas
 gallery:
   - src: /assets/reports/2026-11-aneto/01.jpg
-    alt: Alpinista con mochila roja y bastones entre rocas y manchas de nieve, antes del amanecer
-    caption: Esperando la luz antes de entrar en la nieve.
+    alt: "Sendero de piedras de noche bajo la luna y las estrellas, con un alpinista a contraluz"
+    caption: "La aproximación de noche, bajo la luna."
   - src: /assets/reports/2026-11-aneto/02.jpg
-    alt: Alpinista de pie delante de placas nevadas al amanecer
-    caption: Al amanecer, con las placas nevadas detrás.
+    alt: "Alpinista con mochila roja entre rocas y nieve al amanecer, con las montañas y el horizonte naranja detrás"
+    caption: "El segundo desayuno, esperando el amanecer."
   - src: /assets/reports/2026-11-aneto/03.jpg
-    alt: Alpinista en una reunión entre bloques de granito, con torres de roca detrás
-    caption: En la cresta, siempre por la vertiente sur.
+    alt: "Pendiente de nieve con bloques de granito bajo una cresta rocosa y el cielo azul"
+    caption: "Nieve dura y cómoda hacia el pie de vía."
   - src: /assets/reports/2026-11-aneto/04.jpg
-    alt: Alpinista con casco y cuerda naranja sentado en una reunión sobre un bloque
-    caption: Una reunión en los pasos más expuestos.
+    alt: "Sol bajo sobre una pendiente nevada con bloques de roca y montañas oscuras en el horizonte"
+    caption: "El sol sobre la pendiente nevada."
+  - src: /assets/reports/2026-11-aneto/05.jpg
+    alt: "Alpinista con chaqueta amarilla y casco blanco subiendo entre bloques de granito, con las montañas de los Pirineos detrás"
+    caption: "Subiendo por el granito."
+  - src: /assets/reports/2026-11-aneto/cover.jpg
+    alt: "Alpinista en una reunión sobre una cresta de granito, con la cuerda naranja y el cielo azul detrás"
+    caption: "En una reunión en la cresta."
+  - src: /assets/reports/2026-11-aneto/07.jpg
+    alt: "Pared de roca y nieve bajo un cielo azul intenso"
+    caption: "Roca y nieve sobre nosotros."
+  - src: /assets/reports/2026-11-aneto/08.jpg
+    alt: "Alpinista encordado entre los bloques de la cresta, con la cuerda en primer plano y el cielo azul"
+    caption: "Encordados entre los bloques."
+  - src: /assets/reports/2026-11-aneto/09.jpg
+    alt: "Dos alpinistas con casco y gafas de sol sonríen en la cresta, con las cuerdas al hombro"
+    caption: "Foto de cordada."
+  - src: /assets/reports/2026-11-aneto/10.jpg
+    alt: "Pendiente nevada con vistas a los valles de los Pirineos bajo un cielo azul intenso"
+    caption: "La vista hacia los valles."
 ---
 
 Salir de Segovia y conducir hasta los Pirineos es un gran esfuerzo físico y mental que, tal como soy, debería tener como premio una vía de cierta entidad alpina.

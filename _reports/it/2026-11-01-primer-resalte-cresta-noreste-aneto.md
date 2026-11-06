@@ -12,17 +12,35 @@ route: Cresta nordest, versante sud
 team: 2 persone
 gallery:
   - src: /assets/reports/2026-11-aneto/01.jpg
-    alt: Alpinista con zaino rosso e bastoncini su rocce e chiazze di neve, prima dell'alba
-    caption: L'attesa della luce, prima di entrare sulla neve.
+    alt: "Sentiero di pietre di notte sotto la luna e le stelle, con un alpinista in controluce"
+    caption: "L'avvicinamento di notte, sotto la luna."
   - src: /assets/reports/2026-11-aneto/02.jpg
-    alt: Alpinista in piedi davanti a placche innevate all'alba
-    caption: All'alba, con le placche innevate alle spalle.
+    alt: "Alpinista con zaino rosso su rocce e neve all'alba, con le montagne e l'orizzonte arancione dietro"
+    caption: "La seconda colazione, in attesa dell'alba."
   - src: /assets/reports/2026-11-aneto/03.jpg
-    alt: Alpinista in sosta fra blocchi di granito, con torri di roccia dietro
-    caption: In cresta, restando sul versante sud.
+    alt: "Pendio di neve con blocchi di granito sotto una cresta rocciosa e il cielo blu"
+    caption: "Neve dura e comoda verso l'attacco."
   - src: /assets/reports/2026-11-aneto/04.jpg
-    alt: Alpinista con casco e corda arancione seduto in sosta su un blocco
-    caption: Una sosta nei passaggi più esposti.
+    alt: "Sole basso su un pendio innevato con blocchi di roccia e montagne scure all'orizzonte"
+    caption: "Il sole sul pendio innevato."
+  - src: /assets/reports/2026-11-aneto/05.jpg
+    alt: "Alpinista con giacca gialla e casco bianco che sale fra i blocchi di granito, con le montagne dei Pirenei dietro"
+    caption: "In salita sul granito."
+  - src: /assets/reports/2026-11-aneto/cover.jpg
+    alt: "Alpinista in sosta su una cresta di granito, con la corda arancione e il cielo blu dietro"
+    caption: "In sosta sulla cresta."
+  - src: /assets/reports/2026-11-aneto/07.jpg
+    alt: "Parete di roccia e neve sotto un cielo blu intenso"
+    caption: "Roccia e neve sopra di noi."
+  - src: /assets/reports/2026-11-aneto/08.jpg
+    alt: "Alpinista in cordata fra i blocchi della cresta, con la corda in primo piano e il cielo blu"
+    caption: "In cordata fra i blocchi."
+  - src: /assets/reports/2026-11-aneto/09.jpg
+    alt: "Due alpinisti con casco e occhiali da sole sorridono sulla cresta, con le corde a tracolla"
+    caption: "Foto di cordata."
+  - src: /assets/reports/2026-11-aneto/10.jpg
+    alt: "Pendio innevato con vista sulle valli dei Pirenei sotto un cielo blu intenso"
+    caption: "La vista verso le valli."
 ---
 
 Partire da Segovia per guidare fino ai Pirenei è un grande sforzo psicofisico che, per come sono fatto, dovrebbe essere premiato con una via di un certo impegno alpinistico.
