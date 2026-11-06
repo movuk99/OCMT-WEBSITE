@@ -11,18 +11,12 @@ difficulty: III, PD+/AD-
 route: North-east ridge, south flank
 team: 2 people
 gallery:
-  - src: /assets/reports/2026-11-aneto/01.jpg
-    alt: "Stony path at night under the moon and stars, with an alpinist in silhouette"
-    caption: "The approach at night, under the moon."
   - src: /assets/reports/2026-11-aneto/02.jpg
     alt: "Alpinist with a red rucksack among rocks and snow at dawn, with mountains and an orange horizon behind"
     caption: "Second breakfast, waiting for dawn."
   - src: /assets/reports/2026-11-aneto/03.jpg
     alt: "Snow slope with granite blocks below a rocky ridge and blue sky"
     caption: "Hard, easy-going snow towards the foot of the route."
-  - src: /assets/reports/2026-11-aneto/04.jpg
-    alt: "Low sun over a snowy slope with rock blocks and dark mountains on the horizon"
-    caption: "Sun on the snowy slope."
   - src: /assets/reports/2026-11-aneto/05.jpg
     alt: "Alpinist in a yellow jacket and white helmet moving up through granite blocks, with the Pyrenees behind"
     caption: "Moving up the granite."
