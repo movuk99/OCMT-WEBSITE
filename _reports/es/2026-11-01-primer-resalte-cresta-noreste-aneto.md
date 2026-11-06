@@ -16,15 +16,36 @@ gallery:
   - src: /assets/reports/2026-11-aneto/03.jpg
     alt: "Pendiente de nieve con bloques de granito bajo una cresta rocosa y el cielo azul"
     caption: "Nieve dura y cómoda hacia el pie de vía."
+  - src: /assets/reports/2026-11-aneto/i360-106.jpg
+    alt: "Mano de alpinista sobre un bloque de granito de la cresta, con la cuerda naranja y la ladera nevada detrás"
+    caption: "Manos en el granito."
+  - src: /assets/reports/2026-11-aneto/i360-111.jpg
+    alt: "Alpinista con casco azul visto desde arriba en una cresta de bloques, con una mochila roja más adelante, nieve a los lados y el sol en el cielo"
+    caption: "La cresta vista desde arriba."
   - src: /assets/reports/2026-11-aneto/05.jpg
     alt: "Alpinista con chaqueta amarilla y casco blanco subiendo entre bloques de granito, con las montañas de los Pirineos detrás"
     caption: "Subiendo por el granito."
   - src: /assets/reports/2026-11-aneto/cover.jpg
     alt: "Alpinista en una reunión sobre una cresta de granito, con la cuerda naranja y el cielo azul detrás"
     caption: "En una reunión en la cresta."
+  - src: /assets/reports/2026-11-aneto/i360-125.jpg
+    alt: "Alpinista con la cuerda naranja y los mosquetones en el arnés, con la mano sobre un gran bloque de granito encima de la nieve"
+    caption: "El material en el arnés."
+  - src: /assets/reports/2026-11-aneto/i360-136.jpg
+    alt: "Alpinista con casco azul en placas de granito junto a una mancha de nieve, con agujas de roca y el valle detrás"
+    caption: "Entre granito y manchas de nieve."
   - src: /assets/reports/2026-11-aneto/07.jpg
     alt: "Pared de roca y nieve bajo un cielo azul intenso"
     caption: "Roca y nieve sobre nosotros."
+  - src: /assets/reports/2026-11-aneto/i360-196.jpg
+    alt: "Alpinista con casco azul y arnés de pie entre los bloques, con otra persona agachada en la nieve detrás y las montañas en el horizonte"
+    caption: "Los dos en la cresta."
+  - src: /assets/reports/2026-11-aneto/i360-180.jpg
+    alt: "Alpinista con casco azul sentado sobre un bloque de granito con la cuerda naranja en la mano, con la nieve debajo y los valles detrás"
+    caption: "Cuerda en mano, sobre la nieve."
+  - src: /assets/reports/2026-11-aneto/i360-201.jpg
+    alt: "Cresta de bloques y nieve con una persona entre las rocas, la cuerda naranja en primer plano y los Pirineos en el horizonte"
+    caption: "La cresta y el horizonte de los Pirineos."
   - src: /assets/reports/2026-11-aneto/08.jpg
     alt: "Alpinista encordado entre los bloques de la cresta, con la cuerda en primer plano y el cielo azul"
     caption: "Encordados entre los bloques."

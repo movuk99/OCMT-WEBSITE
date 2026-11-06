@@ -17,15 +17,36 @@ gallery:
   - src: /assets/reports/2026-11-aneto/03.jpg
     alt: "Pendio di neve con blocchi di granito sotto una cresta rocciosa e il cielo blu"
     caption: "Neve dura e comoda verso l'attacco."
+  - src: /assets/reports/2026-11-aneto/i360-106.jpg
+    alt: "Mano di alpinista su un blocco di granito della cresta, con la corda arancione e il versante innevato dietro"
+    caption: "Mani sul granito."
+  - src: /assets/reports/2026-11-aneto/i360-111.jpg
+    alt: "Alpinista con casco blu visto dall'alto su una cresta di blocchi, con uno zaino rosso più avanti, neve ai lati e il sole nel cielo"
+    caption: "La cresta vista dall'alto."
   - src: /assets/reports/2026-11-aneto/05.jpg
     alt: "Alpinista con giacca gialla e casco bianco che sale fra i blocchi di granito, con le montagne dei Pirenei dietro"
     caption: "In salita sul granito."
   - src: /assets/reports/2026-11-aneto/cover.jpg
     alt: "Alpinista in sosta su una cresta di granito, con la corda arancione e il cielo blu dietro"
     caption: "In sosta sulla cresta."
+  - src: /assets/reports/2026-11-aneto/i360-125.jpg
+    alt: "Alpinista con la corda arancione e i moschettoni all'imbrago, con la mano su un grande blocco di granito sopra la neve"
+    caption: "Il materiale all'imbrago."
+  - src: /assets/reports/2026-11-aneto/i360-136.jpg
+    alt: "Alpinista con casco blu su placche di granito accanto a una chiazza di neve, con guglie di roccia e la valle dietro"
+    caption: "Fra granito e chiazze di neve."
   - src: /assets/reports/2026-11-aneto/07.jpg
     alt: "Parete di roccia e neve sotto un cielo blu intenso"
     caption: "Roccia e neve sopra di noi."
+  - src: /assets/reports/2026-11-aneto/i360-196.jpg
+    alt: "Alpinista con casco blu e imbrago in piedi fra i blocchi, con un secondo alpinista accovacciato sulla neve dietro e le montagne all'orizzonte"
+    caption: "In due sulla cresta."
+  - src: /assets/reports/2026-11-aneto/i360-180.jpg
+    alt: "Alpinista con casco blu seduto su un blocco di granito con la corda arancione in mano, con la neve sotto e le valli dietro"
+    caption: "Corda in mano, sopra la neve."
+  - src: /assets/reports/2026-11-aneto/i360-201.jpg
+    alt: "Cresta di blocchi e neve con un alpinista fra le rocce, la corda arancione in primo piano e i Pirenei all'orizzonte"
+    caption: "La cresta e l'orizzonte dei Pirenei."
   - src: /assets/reports/2026-11-aneto/08.jpg
     alt: "Alpinista in cordata fra i blocchi della cresta, con la corda in primo piano e il cielo blu"
     caption: "In cordata fra i blocchi."
