@@ -1,0 +1,36 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {%- assign static_pages = site.static_files | where: "extname", ".html" -%}
+  {%- for file in static_pages %}
+  <url><loc>{% if file.path == "/index.html" %}{{ "/" | absolute_url }}{% else %}{{ file.path | absolute_url }}{% endif %}</loc></url>
+  {%- endfor -%}
+  {%- if site.reports.size > 0 -%}
+  {%- for l in site.data.report_langs %}
+  <url>
+    <loc>{{ l.list_url | absolute_url }}</loc>
+    {%- for alt in site.data.report_langs %}
+    <xhtml:link rel="alternate" hreflang="{{ alt.code }}" href="{{ alt.list_url | absolute_url }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ "/en/trip-reports/" | absolute_url }}"/>
+  </url>
+  {%- endfor -%}
+  {%- for report in site.reports -%}
+  {%- assign versions = site.reports | where: "slug", report.slug -%}
+  {%- assign default_version = versions | where: "lang", "en" | first -%}
+  {%- unless default_version -%}{%- assign default_version = versions | where: "lang", "es" | first -%}{%- endunless -%}
+  {%- unless default_version -%}{%- assign default_version = versions | first -%}{%- endunless %}
+  <url>
+    <loc>{{ report.url | absolute_url }}</loc>
+    <lastmod>{{ report.date | date: "%Y-%m-%d" }}</lastmod>
+    {%- for v in versions %}
+    <xhtml:link rel="alternate" hreflang="{{ v.lang }}" href="{{ v.url | absolute_url }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ default_version.url | absolute_url }}"/>
+  </url>
+  {%- endfor -%}
+  {%- endif %}
+</urlset>

@@ -1,0 +1,57 @@
+---
+layout: reports-base
+---
+{%- assign t = site.data.report_langs | where: "code", page.lang | first -%}
+{%- assign sorted = site.reports | sort: "date" | reverse -%}
+{%- assign seen = "|" %}
+    <section class="page-header">
+      <svg class="page-header__topo" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,400 C200,360 300,430 500,390 C700,350 800,410 1000,370 C1100,350 1150,380 1200,365" />
+        <path d="M0,440 C220,410 320,460 520,430 C720,400 820,450 1020,420 C1120,405 1160,425 1200,415" />
+      </svg>
+      <div class="container page-header__content">
+        <p class="eyebrow report-header__eyebrow">{{ t.list_eyebrow }}</p>
+        <h1 class="page-header__title">{{ t.list_title }}</h1>
+        <p class="page-header__subtitle">{{ t.list_subtitle }}</p>
+      </div>
+    </section>
+
+    <section class="container report-list">
+      {%- if sorted.size == 0 %}
+      <p class="report-list__empty">{{ t.empty }}</p>
+      {%- else %}
+      <div class="mv-grid">
+        {%- for doc in sorted -%}
+          {%- assign key = doc.slug | prepend: "|" | append: "|" -%}
+          {%- if seen contains key -%}{%- continue -%}{%- endif -%}
+          {%- assign seen = seen | append: key -%}
+          {%- assign versions = site.reports | where: "slug", doc.slug -%}
+          {%- assign report = versions | where: "lang", page.lang | first -%}
+          {%- assign is_fallback = false -%}
+          {%- unless report -%}
+            {%- assign is_fallback = true -%}
+            {%- assign report = versions | where: "lang", "en" | first -%}
+            {%- unless report -%}{%- assign report = versions | where: "lang", "es" | first -%}{%- endunless -%}
+            {%- unless report -%}{%- assign report = doc -%}{%- endunless -%}
+          {%- endunless -%}
+          {%- assign report_lang = site.data.report_langs | where: "code", report.lang | first %}
+        <article class="mv-card" data-reveal>
+          <a href="{{ report.url }}" class="mv-card__frame" aria-hidden="true" tabindex="-1">
+            {%- if report.cover %}
+            <img class="mv-card__media report-card__img" src="{{ report.cover }}" alt="{{ report.cover_alt | escape }}" loading="lazy" decoding="async">
+            {%- else %}
+            <span class="mv-card__media"></span>
+            {%- endif %}
+          </a>
+          <p class="eyebrow eyebrow--dark report-card__meta">{%- include report-date.html date=report.date t=t -%}{% if report.altitude %} · {{ report.altitude }}{% endif %}</p>
+          <h2 class="mv-card__title report-card__title"{% if is_fallback %} lang="{{ report.lang }}"{% endif %}><a href="{{ report.url }}">{{ report.title }}</a></h2>
+          <p class="mv-card__text"{% if is_fallback %} lang="{{ report.lang }}"{% endif %}>{{ report.description }}</p>
+          {%- if is_fallback %}
+          <p class="report-card__lang">{{ t.only_in }} {{ report_lang.name }}</p>
+          {%- endif %}
+          <a href="{{ report.url }}" class="mv-card__link">{{ t.read }} <span aria-hidden="true">→</span></a>
+        </article>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </section>

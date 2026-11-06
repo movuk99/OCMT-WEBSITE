@@ -123,3 +123,21 @@ if (slideshow && !window.matchMedia('(prefers-reduced-motion: reduce)').matches)
     }
   });
 }
+
+// Trip reports link — the href stays on the English list, the same language as
+// these pages. A person clicking it lands on the language they chose before, or
+// on their browser's language. Crawlers just follow the href.
+const reportListUrls = { es: '/relatos/', en: '/en/trip-reports/', it: '/it/relazioni/' };
+document.querySelectorAll('[data-report-nav]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    let lang = null;
+    try { lang = localStorage.getItem('ocmtReportsLang'); } catch (err) { /* storage blocked */ }
+    if (!reportListUrls[lang]) {
+      const browserLang = (navigator.language || 'en').slice(0, 2);
+      lang = reportListUrls[browserLang] ? browserLang : 'en';
+    }
+    e.preventDefault();
+    window.location.href = reportListUrls[lang];
+  });
+});
