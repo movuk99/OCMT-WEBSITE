@@ -11,18 +11,12 @@ difficulty: III, PD+/AD-
 route: Cresta nordest, versante sud
 team: 2 persone
 gallery:
-  - src: /assets/reports/2026-11-aneto/01.jpg
-    alt: "Sentiero di pietre di notte sotto la luna e le stelle, con un alpinista in controluce"
-    caption: "L'avvicinamento di notte, sotto la luna."
   - src: /assets/reports/2026-11-aneto/02.jpg
     alt: "Alpinista con zaino rosso su rocce e neve all'alba, con le montagne e l'orizzonte arancione dietro"
     caption: "La seconda colazione, in attesa dell'alba."
   - src: /assets/reports/2026-11-aneto/03.jpg
     alt: "Pendio di neve con blocchi di granito sotto una cresta rocciosa e il cielo blu"
     caption: "Neve dura e comoda verso l'attacco."
-  - src: /assets/reports/2026-11-aneto/04.jpg
-    alt: "Sole basso su un pendio innevato con blocchi di roccia e montagne scure all'orizzonte"
-    caption: "Il sole sul pendio innevato."
   - src: /assets/reports/2026-11-aneto/05.jpg
     alt: "Alpinista con giacca gialla e casco bianco che sale fra i blocchi di granito, con le montagne dei Pirenei dietro"
     caption: "In salita sul granito."

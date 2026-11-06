@@ -10,18 +10,12 @@ difficulty: III, PD+/AD-
 route: Cresta noreste, vertiente sur
 team: 2 personas
 gallery:
-  - src: /assets/reports/2026-11-aneto/01.jpg
-    alt: "Sendero de piedras de noche bajo la luna y las estrellas, con un alpinista a contraluz"
-    caption: "La aproximación de noche, bajo la luna."
   - src: /assets/reports/2026-11-aneto/02.jpg
     alt: "Alpinista con mochila roja entre rocas y nieve al amanecer, con las montañas y el horizonte naranja detrás"
     caption: "El segundo desayuno, esperando el amanecer."
   - src: /assets/reports/2026-11-aneto/03.jpg
     alt: "Pendiente de nieve con bloques de granito bajo una cresta rocosa y el cielo azul"
     caption: "Nieve dura y cómoda hacia el pie de vía."
-  - src: /assets/reports/2026-11-aneto/04.jpg
-    alt: "Sol bajo sobre una pendiente nevada con bloques de roca y montañas oscuras en el horizonte"
-    caption: "El sol sobre la pendiente nevada."
   - src: /assets/reports/2026-11-aneto/05.jpg
     alt: "Alpinista con chaqueta amarilla y casco blanco subiendo entre bloques de granito, con las montañas de los Pirineos detrás"
     caption: "Subiendo por el granito."
