@@ -167,6 +167,14 @@ a:focus-visible, button:focus-visible {
   backdrop-filter: blur(10px);
   box-shadow: 0 1px 0 rgba(255,255,255,0.06);
 }
+/* On mobile the menu is position: fixed inside .nav, and backdrop-filter would
+   confine it to the height of the bar once the page has scrolled. */
+@media (max-width: 899px) {
+  .nav.is-scrolled {
+    background: rgba(21, 20, 15, 0.94);
+    backdrop-filter: none;
+  }
+}
 .nav__inner {
   max-width: var(--container-width);
   margin-inline: auto;
@@ -194,6 +202,8 @@ a:focus-visible, button:focus-visible {
 .footer__logo.logo-mark { width: 95px; height: 42px; }
 
 .nav__toggle {
+  position: relative;
+  z-index: 1; /* stays above the open menu, so it can close it */
   display: flex;
   flex-direction: column;
   gap: 5px;

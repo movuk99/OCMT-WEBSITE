@@ -1,0 +1,85 @@
+---
+layout: reports-base
+---
+{%- assign t = site.data.report_langs | where: "code", page.lang | first -%}
+{%- capture formatted_date -%}{%- include report-date.html date=page.date t=t -%}{%- endcapture -%}
+    <section class="page-header{% if page.cover %} page-header--photo{% endif %}">
+      {%- if page.cover %}
+      <div class="page-header__media">
+        <img src="{{ page.cover }}" alt="{{ page.cover_alt | escape }}" fetchpriority="high">
+      </div>
+      <div class="page-header__scrim"></div>
+      {%- else %}
+      <svg class="page-header__topo" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,400 C200,360 300,430 500,390 C700,350 800,410 1000,370 C1100,350 1150,380 1200,365" />
+        <path d="M0,440 C220,410 320,460 520,430 C720,400 820,450 1020,420 C1120,405 1160,425 1200,415" />
+      </svg>
+      {%- endif %}
+      <div class="container page-header__content">
+        <p class="eyebrow report-header__eyebrow">{% if page.region %}{{ page.region }} · {% endif %}{{ formatted_date }}</p>
+        <h1 class="page-header__title">{{ page.title }}</h1>
+        {%- if page.subtitle %}
+        <p class="page-header__subtitle">{{ page.subtitle }}</p>
+        {%- endif %}
+      </div>
+    </section>
+
+    <article>
+      <section class="container exp-detail__body">
+        <a href="{{ t.list_url }}" class="mv-card__link report-back"><span aria-hidden="true">←</span> {{ t.back }}</a>
+
+        <hr class="exp-detail__divider">
+
+        <div class="exp-detail__meta report-meta">
+          {%- include report-meta-item.html icon="date" label=t.date value=formatted_date %}
+          {%- include report-meta-item.html icon="altitude" label=t.altitude value=page.altitude %}
+          {%- include report-meta-item.html icon="duration" label=t.duration value=page.duration %}
+          {%- include report-meta-item.html icon="difficulty" label=t.difficulty value=page.difficulty %}
+          {%- include report-meta-item.html icon="route" label=t.route value=page.route %}
+          {%- include report-meta-item.html icon="team" label=t.team value=page.team %}
+        </div>
+
+        <hr class="exp-detail__divider">
+
+        <div class="report-prose">
+{{ content }}
+        </div>
+      </section>
+
+      {%- if page.gallery %}
+      <section class="container exp-detail__gallery" aria-labelledby="report-photos">
+        <h2 class="exp-detail__heading report-gallery__title" id="report-photos">{{ t.photos }}</h2>
+        <div class="exp-detail__gallery-grid report-gallery">
+          {%- for photo in page.gallery %}
+          <a href="{{ photo.src }}" class="exp-detail__gallery-item" data-lightbox data-caption="{{ photo.caption | default: photo.alt | escape }}">
+            <img src="{{ photo.src }}" alt="{{ photo.alt | escape }}" loading="lazy" decoding="async">
+          </a>
+          {%- endfor %}
+        </div>
+      </section>
+
+      <dialog class="lightbox" id="lightbox" aria-label="{{ t.photos }}">
+        <button type="button" class="lightbox__btn lightbox__close" data-lightbox-close aria-label="{{ t.close }}">×</button>
+        <button type="button" class="lightbox__btn lightbox__prev" data-lightbox-prev aria-label="{{ t.previous }}">←</button>
+        <figure class="lightbox__figure">
+          <img class="lightbox__img" alt="">
+          <figcaption class="lightbox__caption"></figcaption>
+        </figure>
+        <button type="button" class="lightbox__btn lightbox__next" data-lightbox-next aria-label="{{ t.next }}">→</button>
+      </dialog>
+      {%- endif %}
+    </article>
+
+    <section class="join">
+      <div class="container join__inner">
+        <div data-reveal>
+          <p class="eyebrow eyebrow--dark">{{ t.join_eyebrow }}</p>
+          <h2 class="section-title">{{ t.join_title }}</h2>
+          <p class="join__text">{{ t.join_text }}</p>
+        </div>
+        <div class="join__actions" data-reveal>
+          <a href="/contact.html" class="btn btn--primary btn--block">{{ t.join_primary }}</a>
+          <a href="/contact.html" class="btn btn--outline btn--block">{{ t.join_secondary }}</a>
+        </div>
+      </div>
+    </section>

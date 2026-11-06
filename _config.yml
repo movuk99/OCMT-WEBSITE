@@ -1,0 +1,25 @@
+# Used by GitHub Pages only for the trip reports section.
+# The existing .html pages have no front matter, so Jekyll copies them untouched.
+title: OCMT
+url: https://outdoorscmt.com
+timezone: UTC
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+
+collections:
+  reports:
+    output: true
+
+# The language of a report comes from its folder. The same file name in two
+# folders means "these are translations of the same report".
+defaults:
+  - scope: { path: "_reports/es", type: reports }
+    values: { layout: report, lang: es, permalink: "/relatos/:slug/" }
+  - scope: { path: "_reports/en", type: reports }
+    values: { layout: report, lang: en, permalink: "/en/trip-reports/:slug/" }
+  - scope: { path: "_reports/it", type: reports }
+    values: { layout: report, lang: it, permalink: "/it/relazioni/:slug/" }

@@ -1,0 +1,3 @@
+{%- assign month_index = include.date | date: "%-m" | minus: 1 -%}
+{%- assign sep = include.t.date_separator | default: " " -%}
+{{- include.date | date: "%-d" }}{{ sep }}{{ include.t.months[month_index] }}{{ sep }}{{ include.date | date: "%Y" -}}

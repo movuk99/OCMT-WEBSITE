@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{%- assign t = site.data.report_langs | where: "code", page.lang | first -%}
+{%- assign is_report = false -%}
+{%- if page.collection == "reports" -%}
+  {%- assign is_report = true -%}
+  {%- assign versions = site.reports | where: "slug", page.slug -%}
+  {%- assign default_version = versions | where: "lang", "en" | first -%}
+  {%- unless default_version -%}{%- assign default_version = versions | where: "lang", "es" | first -%}{%- endunless -%}
+  {%- unless default_version -%}{%- assign default_version = versions | first -%}{%- endunless -%}
+  {%- assign meta_title = page.title | append: " | OCMT" -%}
+  {%- assign meta_description = page.description -%}
+  {%- assign og_type = "article" -%}
+{%- else -%}
+  {%- assign meta_title = t.list_meta_title -%}
+  {%- assign meta_description = t.list_meta_description -%}
+  {%- assign og_type = "website" -%}
+{%- endif %}
+<html lang="{{ page.lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ meta_title | escape }}</title>
+  <meta name="description" content="{{ meta_description | escape }}">
+  {%- if is_report == false and site.reports.size == 0 %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {%- if is_report %}
+  {%- for v in versions %}
+  <link rel="alternate" hreflang="{{ v.lang }}" href="{{ v.url | absolute_url }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ default_version.url | absolute_url }}">
+  {%- else %}
+  {%- for l in site.data.report_langs %}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ l.list_url | absolute_url }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ "/en/trip-reports/" | absolute_url }}">
+  {%- endif %}
+  <meta property="og:site_name" content="OCMT">
+  <meta property="og:title" content="{{ meta_title | escape }}">
+  <meta property="og:description" content="{{ meta_description | escape }}">
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="{{ t.og_locale }}">
+  <meta property="og:image" content="{{ page.cover | default: '/assets/hero-bw.jpg' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/reports.css">
+  {%- if is_report %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "inLanguage": {{ page.lang | jsonify }},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+    {%- if page.cover %}
+    "image": [{{ page.cover | absolute_url | jsonify }}],
+    {%- endif %}
+    "author": { "@type": "Organization", "name": "OCMT", "url": {{ "/" | absolute_url | jsonify }} },
+    "publisher": { "@type": "Organization", "name": "OCMT", "url": {{ "/" | absolute_url | jsonify }} }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": {{ t.home | jsonify }}, "item": {{ "/" | absolute_url | jsonify }} },
+      { "@type": "ListItem", "position": 2, "name": {{ t.list_title | jsonify }}, "item": {{ t.list_url | absolute_url | jsonify }} },
+      { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }} }
+    ]
+  }
+  </script>
+  {%- endif %}
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/index.html" class="nav__logo"><span class="logo-mark" role="img" aria-label="OCMT"></span></a>
+
+      <div class="lang-switch" role="group" aria-label="{{ t.language }}">
+        {%- for l in site.data.report_langs -%}
+          {%- assign target = l.list_url -%}
+          {%- if is_report -%}
+            {%- assign version = versions | where: "lang", l.code | first -%}
+            {%- assign target = version.url -%}
+          {%- endif -%}
+          {%- if l.code == page.lang %}
+        <a href="{{ target }}" class="lang-switch__item is-current" hreflang="{{ l.code }}" lang="{{ l.code }}" aria-current="true" title="{{ l.name }}">{{ l.code | upcase }}</a>
+          {%- elsif target %}
+        <a href="{{ target }}" class="lang-switch__item" hreflang="{{ l.code }}" lang="{{ l.code }}" title="{{ l.name }}" data-lang-choice="{{ l.code }}">{{ l.code | upcase }}</a>
+          {%- else %}
+        <span class="lang-switch__item is-unavailable" title="{{ t.unavailable }}">{{ l.code | upcase }}</span>
+          {%- endif -%}
+        {%- endfor %}
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="/about.html" class="nav__link">{{ t.nav_about }}</a>
+        <a href="/expeditions.html" class="nav__link">{{ t.nav_expeditions }}</a>
+        <a href="{{ t.list_url }}" class="nav__link is-active">{{ t.nav_reports }}</a>
+        <a href="/contact.html" class="nav__link">{{ t.nav_contact }}</a>
+        <a href="/contact.html" class="nav__link nav__cta">{{ t.nav_join }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+{{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-mark footer__logo" role="img" aria-label="OCMT"></span>
+        <p class="footer__tagline">{{ t.footer_tagline }}</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">{{ t.footer_explore }}</h4>
+        <a href="/about.html">{{ t.nav_about }}</a>
+        <a href="/expeditions.html">{{ t.nav_expeditions }}</a>
+        <a href="{{ t.list_url }}">{{ t.nav_reports }}</a>
+        <a href="/contact.html">{{ t.nav_contact }}</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">{{ t.footer_follow }}</h4>
+        <a href="https://www.instagram.com/outdoorscmt/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/525576945456" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">{{ t.nav_contact }}</h4>
+        <a href="/contact.html">+52 5576945456</a>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer__copy">© {{ site.time | date: "%Y" }} OCMT. Outdoors Club Mountaineering Team.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/reports.js"></script>
+</body>
+</html>

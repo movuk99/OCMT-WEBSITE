@@ -1,0 +1,125 @@
+# Interface text of the trip reports section. Spanish and English are the two
+# versions aimed at search engines; English is the x-default in hreflang.
+- code: es
+  og_locale: es_ES
+  date_separator: " de "
+  name: Español
+  list_url: /relatos/
+  list_eyebrow: Salidas de OCMT
+  list_title: Relatos de montaña
+  list_subtitle: Cómo fue cada salida del equipo. La ruta, las condiciones, el material y las fotos.
+  list_meta_title: Relatos de ascensos y salidas de montaña | OCMT
+  list_meta_description: Relatos de las salidas y expediciones de OCMT en alta montaña. Rutas, condiciones, material y fotos de cada ascenso.
+  empty: Pronto publicaremos los primeros relatos.
+  read: Leer el relato
+  back: Todos los relatos
+  only_in: Solo en
+  photos: Fotos
+  date: Fecha
+  altitude: Altitud
+  duration: Duración
+  difficulty: Dificultad
+  route: Ruta
+  team: Equipo
+  close: Cerrar
+  previous: Foto anterior
+  next: Foto siguiente
+  language: Idioma
+  unavailable: Este relato aún no está traducido
+  home: Inicio
+  months: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+  nav_about: Nosotros
+  nav_expeditions: Expediciones
+  nav_reports: Relatos
+  nav_contact: Contacto
+  nav_join: Únete
+  join_eyebrow: La próxima salida
+  join_title: Ven con nosotros
+  join_text: Grupos pequeños y decisiones seguras en altura. Escríbenos para conocer fechas, requisitos y material.
+  join_primary: Quiero unirme
+  join_secondary: Tengo una pregunta
+  footer_tagline: Educación, comunidad, creación y respeto por la montaña.
+  footer_explore: Explorar
+  footer_follow: Síguenos
+
+- code: en
+  og_locale: en_GB
+  name: English
+  list_url: /en/trip-reports/
+  list_eyebrow: OCMT outings
+  list_title: Trip Reports
+  list_subtitle: How each outing went. The route, the conditions, the gear and the photos.
+  list_meta_title: Mountaineering trip reports | OCMT
+  list_meta_description: Reports from OCMT outings and expeditions in the high mountains. Routes, conditions, gear and photos from each climb.
+  empty: The first reports are on their way.
+  read: Read the report
+  back: All reports
+  only_in: Only in
+  photos: Photos
+  date: Date
+  altitude: Altitude
+  duration: Duration
+  difficulty: Difficulty
+  route: Route
+  team: Team
+  close: Close
+  previous: Previous photo
+  next: Next photo
+  language: Language
+  unavailable: This report has not been translated yet
+  home: Home
+  months: [January, February, March, April, May, June, July, August, September, October, November, December]
+  nav_about: About
+  nav_expeditions: Expeditions
+  nav_reports: Trip Reports
+  nav_contact: Contact
+  nav_join: Join
+  join_eyebrow: The next outing
+  join_title: Come with us
+  join_text: Small groups mean safer decisions at altitude. Reach out for dates, requirements and gear lists.
+  join_primary: I want to join
+  join_secondary: Ask a question first
+  footer_tagline: Education, community, creation and respect for the mountain.
+  footer_explore: Explore
+  footer_follow: Follow
+
+- code: it
+  og_locale: it_IT
+  name: Italiano
+  list_url: /it/relazioni/
+  list_eyebrow: Le uscite di OCMT
+  list_title: Relazioni
+  list_subtitle: Com'è andata ogni uscita. La via, le condizioni, il materiale e le foto.
+  list_meta_title: Relazioni di alpinismo e uscite in montagna | OCMT
+  list_meta_description: Le relazioni delle uscite e delle spedizioni di OCMT in alta montagna. Vie, condizioni, materiale e foto di ogni salita.
+  empty: Le prime relazioni arrivano presto.
+  read: Leggi la relazione
+  back: Tutte le relazioni
+  only_in: Solo in
+  photos: Foto
+  date: Data
+  altitude: Quota
+  duration: Durata
+  difficulty: Difficoltà
+  route: Via
+  team: Squadra
+  close: Chiudi
+  previous: Foto precedente
+  next: Foto successiva
+  language: Lingua
+  unavailable: Questa relazione non è ancora tradotta
+  home: Home
+  months: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
+  nav_about: Chi siamo
+  nav_expeditions: Spedizioni
+  nav_reports: Relazioni
+  nav_contact: Contatti
+  nav_join: Unisciti
+  join_eyebrow: La prossima uscita
+  join_title: Vieni con noi
+  join_text: Gruppi piccoli e decisioni sicure in quota. Scrivici per date, requisiti e materiale.
+  join_primary: Voglio unirmi
+  join_secondary: Ho una domanda
+  footer_tagline: Educazione, comunità, creazione e rispetto per la montagna.
+  footer_explore: Esplora
+  footer_follow: Seguici
