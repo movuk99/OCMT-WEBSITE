@@ -142,7 +142,7 @@ document.querySelectorAll('[data-report-nav]').forEach((link) => {
   });
 });
 
-// Page loader (home page) — hide once every image and web font has loaded,
+// Page loader (every page) — hide once every image and web font has loaded,
 // shown for at least 350ms so it never just flashes, and never longer than
 // 8s so a slow network can't leave it stuck.
 const pageLoader = document.getElementById('pageLoader');

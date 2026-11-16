@@ -6,9 +6,23 @@
   <title>About — OCMT</title>
   <meta name="description" content="OCMT grew out of the IE Outdoors Club into an independent mountaineering community across Spain and Mexico, certified with EMAM.">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="assets/logo-full.png" as="image">
+<noscript><style>.page-loader { display: none; }</style></noscript>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- ============ PAGE LOADER — hidden by script.js once the page has loaded ============ -->
+<div class="page-loader" id="pageLoader" role="status" aria-label="Page loading.">
+<div class="page-loader__row">
+<span>Welcome to</span>
+<div class="page-loader__mark">
+<img src="assets/logo-full.png" alt="OCMT" class="page-loader__logo" width="1200" height="523">
+<div class="page-loader__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+<span>Page loading.</span>
+</div>
+</div>
 
   <header class="nav">
     <div class="nav__inner">

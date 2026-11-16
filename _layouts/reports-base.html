@@ -44,6 +44,8 @@
   <meta property="og:locale" content="{{ t.og_locale }}">
   <meta property="og:image" content="{{ page.cover | default: '/assets/hero-bw.jpg' | absolute_url }}">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/logo-full.png" as="image">
+  <noscript><style>.page-loader { display: none; }</style></noscript>
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/reports.css">
   {%- if is_report %}
@@ -77,6 +79,18 @@
   {%- endif %}
 </head>
 <body>
+
+  <!-- ============ PAGE LOADER — hidden by script.js once the page has loaded ============ -->
+  <div class="page-loader" id="pageLoader" role="status" aria-label="{{ t.loader_text }}">
+  <div class="page-loader__row">
+  <span>{{ t.loader_welcome }}</span>
+  <div class="page-loader__mark">
+  <img src="/assets/logo-full.png" alt="OCMT" class="page-loader__logo" width="1200" height="523">
+  <div class="page-loader__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+  </div>
+  <span>{{ t.loader_text }}</span>
+  </div>
+  </div>
 
   <header class="nav">
     <div class="nav__inner">

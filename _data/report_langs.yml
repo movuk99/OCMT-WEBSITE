@@ -27,6 +27,8 @@
   language: Idioma
   unavailable: Este relato aún no está traducido
   home: Inicio
+  loader_welcome: Bienvenidos a
+  loader_text: Cargando página.
   months: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
   nav_about: Nosotros
   nav_expeditions: Expediciones
@@ -68,6 +70,8 @@
   language: Language
   unavailable: This report has not been translated yet
   home: Home
+  loader_welcome: Welcome to
+  loader_text: Page loading.
   months: [January, February, March, April, May, June, July, August, September, October, November, December]
   nav_about: About
   nav_expeditions: Expeditions
@@ -109,6 +113,8 @@
   language: Lingua
   unavailable: Questa relazione non è ancora tradotta
   home: Home
+  loader_welcome: Benvenuti in
+  loader_text: Caricamento pagina.
   months: [gennaio, febbraio, marzo, aprile, maggio, giugno, luglio, agosto, settembre, ottobre, novembre, dicembre]
   nav_about: Chi siamo
   nav_expeditions: Spedizioni

@@ -368,7 +368,7 @@ a:focus-visible, button:focus-visible {
 }
 .hero__logo {
   position: relative;
-  width: clamp(220px, 30vw, 400px);
+  width: clamp(170px, 20vw, 280px);
   aspect-ratio: 1200 / 523; /* full logo (mountains + wordmark) is 1200x523 */
   margin-top: var(--space-2);
 }
@@ -1139,7 +1139,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==========================================================================
-   Page loader (home page) — full black screen with the full logo and three
+   Page loader (every page) — full black screen with the full logo and three
    pulsing dots while the page loads. script.js fades it out once every
    image and font has arrived (8s safety cap). Hero entrance animations wait
    until it is gone so they play in view.
