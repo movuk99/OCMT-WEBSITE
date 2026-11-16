@@ -141,3 +141,23 @@ document.querySelectorAll('[data-report-nav]').forEach((link) => {
     window.location.href = reportListUrls[lang];
   });
 });
+
+// Page loader (home page) — hide once every image and web font has loaded,
+// shown for at least 350ms so it never just flashes, and never longer than
+// 8s so a slow network can't leave it stuck.
+const pageLoader = document.getElementById('pageLoader');
+if (pageLoader) {
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const shownAt = Date.now();
+  const pageLoaded = new Promise((resolve) => {
+    if (document.readyState === 'complete') resolve();
+    else window.addEventListener('load', resolve, { once: true });
+  })
+    .then(() => (document.fonts && document.fonts.ready) || null)
+    .then(() => wait(Math.max(0, 350 - (Date.now() - shownAt))));
+
+  Promise.race([pageLoaded, wait(8000)]).then(() => {
+    pageLoader.classList.add('is-hidden');
+    setTimeout(() => pageLoader.remove(), 600);
+  });
+}
