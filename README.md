@@ -53,7 +53,7 @@ has a comment explaining what it controls.
 
 **After editing `styles.css`, `script.js`, `reports.css` or `reports.js`:** change
 the `?v=...` at the end of their links in every `.html` page and in
-`_layouts/reports-base.html` (for example `?v=20261116a` → `?v=20261120a`).
+`_layouts/reports-base.html` (for example `?v=20261116b` → `?v=20261120a`).
 Otherwise visitors' browsers can keep the old file for a while and the page
 shows up broken.
 

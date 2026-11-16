@@ -142,21 +142,62 @@ document.querySelectorAll('[data-report-nav]').forEach((link) => {
   });
 });
 
-// Page loader (every page) — hide once every image and web font has loaded,
-// shown for at least 350ms so it never just flashes, and never longer than
-// 8s so a slow network can't leave it stuck.
+// Page loader (every page) — the page is revealed only once everything on
+// it has fully loaded: every <img> (lazy ones are switched to load now, so
+// galleries and cards count too), every CSS background image, the web
+// fonts, and the window load event. Images are also decoded, so the hero
+// photo is ready to paint the moment the loader fades. Shown for at least
+// 350ms so it never just flashes. The only exit before that is a 30s safety
+// cap, for a connection that stalls completely.
 const pageLoader = document.getElementById('pageLoader');
 if (pageLoader) {
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const shownAt = Date.now();
-  const pageLoaded = new Promise((resolve) => {
+
+  const imageReady = (img) =>
+    new Promise((resolve) => {
+      if (img.complete) resolve();
+      else {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      }
+    }).then(() => (img.naturalWidth && img.decode ? img.decode().catch(() => {}) : null));
+
+  const pageImages = Array.from(document.images).filter((img) => !pageLoader.contains(img));
+  pageImages.forEach((img) => {
+    if (img.loading === 'lazy') img.loading = 'eager';
+  });
+
+  const backgroundImages = () => {
+    const urls = new Set();
+    document.querySelectorAll('body *').forEach((el) => {
+      if (pageLoader.contains(el)) return;
+      const bg = getComputedStyle(el).backgroundImage;
+      if (!bg || bg === 'none') return;
+      for (const m of bg.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
+        if (!m[1].startsWith('data:')) urls.add(m[1]);
+      }
+    });
+    return Array.from(urls).map((src) => {
+      const img = new Image();
+      img.src = src;
+      return imageReady(img);
+    });
+  };
+
+  const windowLoaded = new Promise((resolve) => {
     if (document.readyState === 'complete') resolve();
     else window.addEventListener('load', resolve, { once: true });
-  })
-    .then(() => (document.fonts && document.fonts.ready) || null)
-    .then(() => wait(Math.max(0, 350 - (Date.now() - shownAt))));
+  });
 
-  Promise.race([pageLoaded, wait(8000)]).then(() => {
+  const everythingLoaded = Promise.all([
+    windowLoaded,
+    ...pageImages.map(imageReady),
+    ...backgroundImages(),
+    document.fonts ? document.fonts.ready : null,
+  ]).then(() => wait(Math.max(0, 350 - (Date.now() - shownAt))));
+
+  Promise.race([everythingLoaded, wait(30000)]).then(() => {
     pageLoader.classList.add('is-hidden');
     setTimeout(() => pageLoader.remove(), 600);
   });
