@@ -368,7 +368,7 @@ a:focus-visible, button:focus-visible {
 }
 .hero__logo {
   position: relative;
-  width: clamp(170px, 20vw, 280px);
+  width: clamp(130px, 13vw, 190px);
   aspect-ratio: 1200 / 523; /* full logo (mountains + wordmark) is 1200x523 */
   margin-top: var(--space-2);
 }
@@ -1169,8 +1169,8 @@ body:has(.page-loader:not(.is-hidden)) { overflow: hidden; }
   align-items: center;
   gap: var(--space-3);
   font-family: var(--font-body);
-  font-size: clamp(15px, 2vw, 19px);
-  letter-spacing: 0.02em;
+  font-size: clamp(13px, 1.4vw, 15px);
+  letter-spacing: 0.04em;
   text-align: center;
 }
 @media (min-width: 640px) {
@@ -1180,20 +1180,20 @@ body:has(.page-loader:not(.is-hidden)) { overflow: hidden; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 .page-loader__logo {
   display: block;
-  width: clamp(180px, 22vw, 260px);
+  width: clamp(110px, 12vw, 150px);
   height: auto;
 }
 .page-loader__dots {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 .page-loader__dots span {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--color-paper);
   animation: loaderPulse 1.1s ease-in-out infinite;
